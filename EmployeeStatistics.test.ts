@@ -84,3 +84,13 @@ test("getHighestPaidEmployee()", ()=>{
     expect(stats.getHighestPaidEmployee()).toBe(employees[2]);
     expect(stats2.getHighestPaidEmployee()).toBe(employees2[1]);
 })
+
+test("countEmployeesOverSalary()", ()=>{
+    expect(stats.countEmployeesOverSalary(40000)).toBe(5);
+    expect(stats.countEmployeesOverSalary(59999)).toBe(3);
+    expect(stats.countEmployeesOverSalary(70000)).toBe(1);
+
+    expect(stats2.countEmployeesOverSalary(40000)).toBe(5);
+    expect(stats2.countEmployeesOverSalary(59999)).toBe(3);
+    expect(stats2.countEmployeesOverSalary(70000)).toBe(1);
+})

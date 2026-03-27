@@ -33,4 +33,15 @@ export class EmployeeStatistics {
     getHighestPaidEmployee(): Employee {
         return this.employees.find(e => e.salary == this.getMaxSalary())!;
     }
+
+    countEmployeesOverSalary(salary: number): number {
+        let count = 0;
+        this.employees.forEach(element => {
+            if (element.salary > salary) {
+                count++;
+            }
+        });
+
+        return count;
+    }
 }
