@@ -20,4 +20,13 @@ export class EmployeeStatistics {
 
         return max;
     }
+
+    getAverageAge(): number {
+        let sum = 0;
+        this.employees.forEach(element => {
+            sum += element.age;
+        });
+
+        return sum/this.employees.length;
+    }
 }
