@@ -29,4 +29,8 @@ export class EmployeeStatistics {
 
         return sum/this.employees.length;
     }
+
+    getHighestPaidEmployee(): Employee {
+        return this.employees.find(e => e.salary == this.getMaxSalary())!;
+    }
 }

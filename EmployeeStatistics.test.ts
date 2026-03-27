@@ -79,3 +79,8 @@ test("getAverageAge():", ()=> {
     expect(stats.getAverageAge()).toBeCloseTo(34.6);
     expect(stats2.getAverageAge()).toBeCloseTo(35.8);
 })
+
+test("getHighestPaidEmployee()", ()=>{
+    expect(stats.getHighestPaidEmployee()).toBe(employees[2]);
+    expect(stats2.getHighestPaidEmployee()).toBe(employees2[1]);
+})
