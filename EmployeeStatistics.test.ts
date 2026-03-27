@@ -31,11 +31,46 @@ const employees: Employee[] = [
   }
 ];
 
+let stats2: EmployeeStatistics;
+const employees2: Employee[] = [
+  {
+    name: "Fiona Gallagher",
+    age: 26,
+    salary: 48000
+  },
+  {
+    name: "George Miller",
+    age: 50,
+    salary: 82000
+  },
+  {
+    name: "Hannah Lee",
+    age: 33,
+    salary: 59000
+  },
+  {
+    name: "Ivan Petrov",
+    age: 41,
+    salary: 71000
+  },
+  {
+    name: "Julia Novak",
+    age: 29,
+    salary: 53000
+  }
+];
+
 beforeEach(()=>{
     stats = new EmployeeStatistics(employees);
+    stats2 = new EmployeeStatistics(employees2);
 })
 
 test("konstruktor", ()=>{
     expect(()=>new EmployeeStatistics([{name: "asd", age: 25, salary: 1000}])).not.toThrow();
     expect(()=>new EmployeeStatistics([])).toThrow();
+})
+
+test("getMaxSalary()", ()=>{
+    expect(stats.getMaxSalary()).toBe(employees[2]!.salary);
+    expect(stats2.getMaxSalary()).toBe(employees2[1]!.salary);
 })

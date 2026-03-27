@@ -9,4 +9,15 @@ export class EmployeeStatistics {
         }
         this.employees = employees;
     }
+
+    getMaxSalary(): number {
+        let max = this.employees[0]!.salary;
+        this.employees.forEach(element => {
+            if (element.salary > max) {
+                max = element.salary;
+            }
+        });
+
+        return max;
+    }
 }
